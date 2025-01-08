@@ -1,0 +1,10 @@
+**/venv/
+**/artifacts/
+**.pyc
+**.db
+**/mlruns/
+
+
+**/mage_data/notebook/.cache/
+**/mage_data/notebook/pipelines/
+**/mlruns/

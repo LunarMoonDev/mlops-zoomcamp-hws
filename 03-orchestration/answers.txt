@@ -1,0 +1,34 @@
+Q1: Run Mage
+    - First, let's run Mage with Docker Compose. Follow the quick start guideline.
+    - What's the version of Mage we run?
+    Ans: 0.9.75
+
+Q2: How many lines are in the created metadata.yaml file?
+    Ans: 55
+
+Q3: Creating a pipeline
+    - Let's create an ingestion code block.
+    - In this block, we will read the March 2023 Yellow taxi trips data.
+    - How many records did we load?
+    Ans: 3,403,766
+
+Q4: Data preparation
+    - Let's use the same logic for preparing the data we used previously. We will need to create a transformer code block and put this code there.
+    - This is what we used (adjusted for yellow dataset):
+    Ans: 3,316,216
+
+Q5: Train a model
+    - We will now train a linear regression model using the same code as in homework 1.
+        - Fit a dict vectorizer.
+        - Train a linear regression with default parameters.
+        - Use pick up and drop off locations separately, don't create a combination feature.
+    - Let's now use it in the pipeline. We will need to create another transformation block, and return both the dict vectorizer and the model.
+    - What's the intercept of the model?
+    Ans: 24.77
+
+Q6: Register the model
+    - run an mlflow server in docker and bridge it with the same network as mage ai
+    - create a data exporter and log the linear model and data victorizer
+    - Find the logged model, and find MLModel file. What's the size of the model? (model_size_bytes field):
+    Ans: 4,534
+
