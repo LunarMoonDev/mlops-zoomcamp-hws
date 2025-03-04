@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  batch-service:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_ENDPOINT_URL=http://localstack:4566
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_OUTPUT=json
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+    container_name: batch_service
+    command: python -m starter --year 2023 --month 5
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - app-networks
+
+networks:
+  app-networks:
+    name: app-networks
+    external: true
