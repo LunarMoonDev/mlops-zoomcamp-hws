@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mageai:
+    image: mageai/mageai:latest
+    container_name: 04-deployment-mlflow
+    ports:
+      - "6789:6789"
+    environment:
+      - USER_CODE_PATH=/home/src/notebook
+      - PYTHONPATH=/home/src/notebook
+    volumes:
+      - .:/home/src
+    command: /app/run_app.sh mage start notebook
