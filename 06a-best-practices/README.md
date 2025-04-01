@@ -162,3 +162,26 @@ engine and compression. Even if you use this exact snippet, the size
 of your dataframe may still be a bit off. Just select the closest option.
 
 **Ans**: 3620
+
+
+## Q6. Finish the integration test
+
+We can read from our localstack s3, but we also need to write to it.
+
+Create a function `save_data` which works similarly to `read_data`,
+but we use it for saving a dataframe. 
+
+Let's run the `batch.py` script for January 2023 (the fake data
+we created in Q5). 
+
+We can do that from our integration test in Python: we can use
+`os.system` for doing that (there are other options too). 
+
+Now it saves the result to localstack.
+
+The only thing we need to do now is to read this data and 
+verify the result is correct. 
+
+What's the sum of predicted durations for the test dataframe?
+
+**Ans**: 36.28
